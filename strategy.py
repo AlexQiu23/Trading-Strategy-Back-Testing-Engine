@@ -54,6 +54,6 @@ class RSIStrategy(Strategy):
     def compute_rsi(self, close, window):
         pass
 
-
+    #test
          
 
