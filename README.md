@@ -40,7 +40,7 @@ The project is in active development. Current limitations I'm aware of:
 
 - **Look ahead bias**. Trades currently execute at the closing price of the bar that generated the signal, which introduces mild lookahead bias. Next planned change is to execute fills at the following bar's open price.
 
-- **No transaction costs**. Commissions and slippage are not yet modeled. Adding even a modest 0.1% per-trade cost meaningfully impacts strategy returns and will be added.
+- **No transaction costs**. Commissions and fees are not yet modeled. Adding even a modest 0.1% per-trade cost meaningfully impacts strategy returns and will be added.
 
 - **Single ticker**. The engine currently backtests one ticker at a time. Multi-asset portfolios are not yet supported.
 
