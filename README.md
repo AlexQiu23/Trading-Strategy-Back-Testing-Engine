@@ -44,8 +44,11 @@ The project is in active development. Current limitations I'm aware of:
 
 - **Single ticker**. The engine currently backtests one ticker at a time. Multi-asset portfolios are not yet supported.
 
+**How to run this project**
 
+- **Run the default backtest:** Open main.py and run it
 
+- **Configuring a Custom Backtest:** Edit the constants at the top of main.py to change ticker, date range, or starting cash
 
 
 
