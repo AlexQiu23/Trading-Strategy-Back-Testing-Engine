@@ -52,8 +52,8 @@ class RSIStrategy(Strategy):
         mean_gains = gains.rolling(window).mean()   #rolling() calculates the mean over a specific time window
         mean_losses = losses.rolling(window).mean()
         rs = mean_gains/mean_losses
-        rsi= 100 - (100 / (1 + rs))
-        return rsi.iloc[-1].round(2) #rsi is a series of rsi values
+        rsi = 100 - (100 / (1 + rs)) #rsi is a series of RSI values
+        return rsi.iloc[-1].round(2) #return today's RSI value
 
 
          
