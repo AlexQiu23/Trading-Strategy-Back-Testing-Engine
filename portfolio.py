@@ -7,7 +7,7 @@ class Portfolio:
     def buy(self, ticker, price, shares):
         if self.cash < price * shares:
             return
-        self.cash = self.cash - (price * shares)
+        self.cash -= price * shares
         self.positions[ticker] = self.positions.get(ticker, 0) + shares
 
     def sell(self, ticker, price, shares):
