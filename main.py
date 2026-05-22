@@ -22,11 +22,7 @@ total_return_bh = (final_stock_value - STARTING_CASH) / STARTING_CASH * 100
 print("Final Portfolio Value when buying and holding:", round(final_stock_value, 2))
 print("Total Return when buying and holding:", round(total_return_bh, 2),"%")
 
-plt.plot(close.index, close * p_buy_hold.positions[TICKER] + p_buy_hold.cash)
-plt.title("Equity Curve: buy and hold")
-plt.xlabel("Time")
-plt.ylabel("Portfolio Value")
-plt.show()
+plt.plot(close.index, close * p_buy_hold.positions[TICKER] + p_buy_hold.cash, label = "Buy and Hold")
 
 
 #SMA Crossover strategy 
@@ -41,11 +37,7 @@ print("Total Return using SMA Crossover strategy:", round(total_return_sma, 2),"
 
 df_sma = data.load_data(TICKER, START, END)
 date = df_sma.index                             #.index returns the row labels of a DataFrame which gives a sequence of dates like [2023-01-03, 2023-01-04, 2023-01-05, ...]
-plt.plot(date, p_sma.equity_curve)
-plt.title("Equity Curve: SMA Crossover")
-plt.xlabel("Time")
-plt.ylabel("Portfolio Value")
-plt.show()
+plt.plot(date, p_sma.equity_curve, label = "SMA Crossover")
 
 
 #RSI strategy
@@ -60,8 +52,12 @@ print("Total Return using RSI strategy:", round(total_return_rsi, 2),"%")
 
 df_rsi = data.load_data(TICKER, START, END)
 date = df_rsi.index
-plt.plot(date, p_rsi.equity_curve)
-plt.title("Equity Curve: RSI")
+plt.plot(date, p_rsi.equity_curve, label = "RSI")
+
+
+#Plot equity curves
+plt.title("Equity Curves")
 plt.xlabel("Time")
 plt.ylabel("Portfolio Value")
+plt.legend()
 plt.show()
